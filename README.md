@@ -17,7 +17,7 @@ A configurable Discord bot that sends messages and pings a specified user both v
 
 1. Clone the Repository
 
-    git clone https://github.com/yourusername/Discord_messaging_bot.git
+    git clone https://github.com/nimyhub/Discord_messaging_bot.git
     cd Discord_messaging_bot
 
 2. Create a Virtual Environment (optional but recommended)
