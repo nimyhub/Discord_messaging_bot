@@ -1,0 +1,41 @@
+{
+  "dm_no_messages": [
+      "Hey, you! Yeah, you. It's time to log in and save the day.",
+      "Urgent! The server is about to explode—only you can prevent it!",
+      "If you're reading this, it's already too late... unless you come online right now.",
+      "The Council has convened. Your attendance is no longer optional."
+  ],
+  "dm_messages": [
+      "{author} has summoned you with great urgency: {message}",
+      "Encrypted transmission from {author}: {message}",
+      "{author} whispers to you from beyond the AFK realm: {message}",
+      "This is not a drill. {author} says: {message}"
+  ],
+  "server_pings": {
+	  "1": [
+    {"text": "<@{user_id}> GET", "delay": 1},
+    {"text": "<@{user_id}> YOUR", "delay": 1},
+    {"text": "<@{user_id}> ASS", "delay": 1},
+    {"text": "<@{user_id}> OVER", "delay": 1},
+    {"text": "<@{user_id}> HERE", "delay": 1}
+  ],
+  "2": [
+    {"text": "<@{user_id}> A TANK STUCK IN A SWAMP IS FASTER THAN YOU.", "delay": 1},
+    {"text": "<@{user_id}> GET ON!", "delay": 1}
+  ],
+  "3": [
+    {"text": "<@{user_id}>, You have one (1) new message from {author}. Display message?", "delay": 0},
+    {"text": "||{message}||", "delay": 0},
+    {"text": "<@{user_id}>, Would you like to reply?", "delay": 5}
+  ],
+  "4": [
+    {"text": "<@{user_id}> SYSTEM ALERT: Inactivity detected.", "delay": 1},
+    {"text": "Auto-ping initialized...", "delay": 1},
+    {"text": "Contact required from subject: <@{user_id}>", "delay": 1},
+    {"text": "Escalating to emergency ping level in 3...", "delay": 1},
+    {"text": "2...", "delay": 1},
+    {"text": "1...", "delay": 1},
+    {"text": "<@{user_id}> THIS IS YOUR FINAL WARNING.", "delay": 1}
+  ]
+  }
+}

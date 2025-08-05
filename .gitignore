@@ -5,5 +5,8 @@ venv/
 __pycache__/
 *.pyc
 
-# Ignore config file with secrets
+# Ignore config file with vulnerable information
 config.json
+
+# Ignore messages file with vulnerable information
+messages.json
