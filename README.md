@@ -12,6 +12,20 @@ A configurable Discord bot that sends messages and pings a specified user both v
 - Easily extendable for custom messages and behaviors.
 
 ---
+## Usage Example
+
+![Bot Demo](https://github.com/nimyhub/Discord_messaging_bot/blob/2a6eced2fae805d4bd9aa5fb727bbb74dda51974/Media/example.gif?raw=true)
+
+In a Discord channel:
+
+```
+!summon GET IN HERE
+```
+
+- Sends a DM to the configured user: `"Get over here - from {author}"`
+- Posts a sequence of ping messages in the configured channel.
+
+---
 
 ## Installation
 
@@ -108,21 +122,6 @@ To customize messages:
   ]
 }
 ```
-
----
-
-## Usage Example
-
-![Bot Demo](Media/bot-example.gif)
-
-In a Discord channel:
-
-```
-!summon "Get over here"
-```
-
-- Sends a DM to the configured user: `"Get over here - from {author}"`
-- Posts a sequence of ping messages in the configured channel.
 
 ---
 
