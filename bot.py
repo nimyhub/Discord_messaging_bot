@@ -56,10 +56,11 @@ async def summon(ctx, message: str):
     
     await ctx.send(f"Summon in progress in {channel.mention}.")
 
-    # Send DM
+    # Send DM and PING #
+    # ==================================================================================== #
     if message is None:
         try:
-            rand = random.randint(1, 1)
+            rand = random.randint(1, 4)
             if rand == 1:
                 await user.send(f"GET YOUR ASS ON!")
             
@@ -67,7 +68,11 @@ async def summon(ctx, message: str):
                 await user.send(f"PETTER QUICK! HÅVARD IS GETTING NAKED ON CAM RIGHT NOW!")
             
             if rand == 3:
-                await user.send(F"An incoming missile is headed straight for your entire Magic collection.  You have 5 minutes to respond in order to call of the strike. Text 'Im here' to {ctx.author}.")
+                await user.send(f"An incoming missile is headed straight for your entire Magic collection.  You have 5 minutes to respond in order to call of the strike. Text 'Im here' to {ctx.author}.")
+
+            if rand == 4:
+                await user.send(f"HÅVARD IS GOING TO FILE FOR DIVORCE IF YOU DONT COME OVER HERE RIGHT NOW!!!")
+
         except Exception as e:
             await ctx.send(f"Failed to send DM: {e}")
     else:

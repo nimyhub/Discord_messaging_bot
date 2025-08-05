@@ -66,6 +66,29 @@ Example `config.json` structure:
 - `prefix`: The command prefix (e.g., `"!"`).
 - `cooldown_seconds`: Minimum time between commands from the same user.
 
+---
+
+You should also customize the messeges sendt you will find all the messages in the `bot.py`file in the project directory. Find the comment # Send DM and PING # and eveything under you can edit.
+
+Example, change this:
+
+```python
+if rand == 4:
+                await user.send(f"HÅVARD IS GOING TO FILE FOR DIVORCE IF YOU DONT COME OVER HERE RIGHT NOW!!!")
+```
+
+To whatever fits you better:
+```python
+if rand == 4:
+                await user.send(f"Custom message here")
+```
+
+Just make sure that
+```python
+rand = random.randint(1, 4)
+```
+and the if-elif statements line up.
+
 ## Author
 **Nikolai Myrstad** 
 - Information Engineering Student  
