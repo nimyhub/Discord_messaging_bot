@@ -60,7 +60,7 @@ async def summon(ctx, message: str):
     # ==================================================================================== #
     if message is None:
         try:
-            rand = random.randint(1, 4)
+            rand = random.randint(1, 5)
             if rand == 1:
                 await user.send(f"GET YOUR ASS ON!")
             
@@ -73,16 +73,38 @@ async def summon(ctx, message: str):
             if rand == 4:
                 await user.send(f"HÅVARD IS GOING TO FILE FOR DIVORCE IF YOU DONT COME OVER HERE RIGHT NOW!!!")
 
+            if rand == 5:
+                await user.send("Petter. Listen carefully. This is not a test. The IKEA meatballs are under siege.")
+
         except Exception as e:
             await ctx.send(f"Failed to send DM: {e}")
     else:
         try:
-            rand = random.randint(1, 2)
+            rand = random.randint(1, 3)
             if rand == 1:
                 await user.send(f"{ctx.author} summons you with: {message}")
             
             if rand == 2:
-                await user.send(f"Dear Sir Petter, On behalf off the great King/Queen {ctx.author} we request you listen carefully to the following message {message}")
+                await user.send(f"Dear Sir Petter, On behalf off the great King/Queen {ctx.author} we request you listen carefully to the following message: {message}")
+            
+            if rand == 3:
+                await user.send(f"{ctx.author} has spoken. Their words echo across the server: {message}. Interpret and act accordingly.")
+            
+            if rand == 4:
+                await user.send(f"{ctx.author} has spoken. Their words echo across the server: {message}. Interpret and act accordingly.")
+
+            if rand == 5:
+                await user.send(f"A classified message from {ctx.author} has just been decrypted: {message} — proceed with extreme overreaction.")
+
+            if rand == 6:
+                await user.send(f"{ctx.author} screamed into the void. The void screamed back: {message}")
+
+            if rand == 7:
+                await user.send(f":warning:[HIGH PRIORITY] Transmission from Commander {ctx.author}: {message}. All units, mobilize.")
+
+            if rand == 8:
+                await user.send(f"Petter, you’ve been drafted. Orders from {ctx.author}: {message}. Desertion is not an option.")
+
         except Exception as e:
             await ctx.send(f"Failed to send DM: {e}")
 
@@ -130,5 +152,101 @@ async def summon(ctx, message: str):
         await channel.send(f"<@{USER_ID}> **Magic the gathering**")
         await asyncio.sleep(1)
         await channel.send(f"<@{USER_ID}> *jingle jingle*")
+
+    elif variant == 6:
+        await channel.send(f"<@{USER_ID}> Your presence is required.")
+        await asyncio.sleep(1)
+        await channel.send(f"<@{USER_ID}> Immediately.")
+        await asyncio.sleep(2)
+        await channel.send(f"<@{USER_ID}> This is not a request.")
+
+    elif variant == 7:
+        await channel.send(f"<@{USER_ID}> GET")
+        await asyncio.sleep(0.6)
+        await channel.send(f"<@{USER_ID}> THE")
+        await asyncio.sleep(0.6)
+        await channel.send(f"<@{USER_ID}> FUCK")
+        await asyncio.sleep(0.6)
+        await channel.send(f"<@{USER_ID}> ONLINE")
+        await asyncio.sleep(0.6)
+        await channel.send(f"<@{USER_ID}> ***RIGHT NOW***")
+        await asyncio.sleep(0.6)
+        await channel.send(f"<@{USER_ID}>")
+        await asyncio.sleep(0.6)
+        await channel.send(f"<@{USER_ID}>")
+        await asyncio.sleep(0.6)
+        await channel.send(f"<@{USER_ID}>")
+
+    elif variant == 8:
+        await channel.send(f"<@{USER_ID}> HÅVARD just updated his relationship status.")
+        await asyncio.sleep(1.5)
+        await channel.send(f"<@{USER_ID}> it's complicated.")
+        await asyncio.sleep(2)
+        await channel.send(f"you better log in before he goes 'complicated' with someone else.")
+
+    elif variant == 9:
+        await channel.send(f"<@{USER_ID}> we found an unopened *Alpha Black Lotus*.")
+        await asyncio.sleep(2)
+        await channel.send(f"<@{USER_ID}> it’s yours if you log on in the next 30 seconds.")
+        await asyncio.sleep(3)
+        await channel.send(f"...it’s gone now.")
+
+    elif variant == 10:
+        await channel.send(f"Initiating summoning ritual: [<@{USER_ID}>]")
+        await asyncio.sleep(5)
+        await channel.send(f"summoning <@{USER_ID}> ▰▰▱▱▱▱▱▱▱ 23%")
+        await asyncio.sleep(5)
+        await channel.send(f"ERROR")
+        await asyncio.sleep(1)
+        await channel.send(f"Summon failed. Host is ignoring all pings.")
+        await asyncio.sleep(1)
+        await channel.send(f"Retrying with Magic bait and HÅVARD nudity")
+
+    elif variant == 11:
+        await channel.send(f"<@{USER_ID}> HÅVARD IS TAKING HIS SHIRT OFF.")
+        await asyncio.sleep(1)
+        await channel.send(f"<@{USER_ID}> HE SAID HE'LL GO ALL THE WAY IF YOU JOIN VC.")
+    
+    elif variant == 12:
+        await channel.send(f"<@{USER_ID}>")
+        await asyncio.sleep(0.5)
+        await channel.send("I AM LOSING MY MIND")
+        await asyncio.sleep(0.5)
+        await channel.send("WHY ARE YOU NEVER ONLINE")
+        await asyncio.sleep(0.5)
+        await channel.send("IT'S BEEN 84 YEARS")
+        await asyncio.sleep(0.5)
+        await channel.send("VC.")
+        await channel.send("**NOW!!**")
+
+    elif variant == 13:
+        await channel.send(f"<@{USER_ID}> SYSTEM ERROR")
+        await asyncio.sleep(1)
+        await channel.send("FRIEND NOT FOUND ONLINE")
+        await asyncio.sleep(1)
+        await channel.send("ATTEMPTING NETWORK RESTART")
+        await asyncio.sleep(1)
+        await channel.send("....")
+        await asyncio.sleep(2)
+        await channel.send("FAILED. USER[<@{USER_ID}>] IS STILL USELESS.")
+
+    elif variant == 14:
+        await channel.send(f"<@{USER_ID}> ALERT: Beta Dual Land for sale for €10.00.")
+        await asyncio.sleep(4)
+        await channel.send("You missed it.")
+        await asyncio.sleep(1.5)
+        await channel.send("You miss everything.")
+        await asyncio.sleep(1)
+        await channel.send("Get on....")
+    
+    elif variant == 15:
+        await channel.send(f"<@{USER_ID}> HÅVARD is crying")
+        await asyncio.sleep(1.5)
+        await channel.send("He waited for you.")
+        await asyncio.sleep(1.5)
+        await channel.send("You never came")
+        await asyncio.sleep(1.5)
+        await channel.send("<@{USER_ID}> You let him down")
+
 
 bot.run(TOKEN)
