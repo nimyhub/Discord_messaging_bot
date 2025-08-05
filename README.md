@@ -15,28 +15,34 @@ A configurable Discord bot that sends messages and pings a specified user both v
 
 ## Installation
 
-1. Clone the Repository
+# 1. Clone the Repository
 
+```bash
     git clone https://github.com/nimyhub/Discord_messaging_bot.git
     cd Discord_messaging_bot
+```
 
-2. Create a Virtual Environment (optional but recommended)
+# 2. Create a Virtual Environment (optional but recommended)
 
-    python -m venv venv
+```bash
+python -m venv venv
+```
+    
+On Windows:
+```bash
+venv\Scripts\activate
+```
 
-    # Activate the environment
-    # On Windows:
-    venv\Scripts\activate
+On Unix/Mac:
+```bash
+source venv/bin/activate
+```
 
-    # On Unix/Mac:
-    source venv/bin/activate
+# 3. Install Dependencies
 
-3. Install Dependencies
-
-    pip install -r requirements.txt
-
-    # If requirements.txt is missing, install manually:
-    pip install discord.py
+```bash
+pip install -U discord.py python-dotenv
+```
 
 ## Configuration
 
@@ -61,10 +67,9 @@ Example `config.json` structure:
 - `cooldown_seconds`: Minimum time between commands from the same user.
 
 ## Author
-
-Niko  
-Information Engineering Student  
-GitHub: [https://github.com/nimyhub](https://github.com/nimyhub)
+**Nikolai Myrstad** 
+- Information Engineering Student  
+- GitHub: [https://github.com/nimyhub](https://github.com/nimyhub)
 ---
 
 ## License
