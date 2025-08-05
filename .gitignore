@@ -1,0 +1,9 @@
+# Ignore Python virtual environment folder
+venv/
+
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+
+# Ignore config file with secrets
+config.json
