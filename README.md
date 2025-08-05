@@ -1,54 +1,68 @@
 # Discord Messaging Bot
 
-A configurable Discord bot that sends messages and pings a specified user both via DM and in a channel. It supports command cooldowns and external configuration via `config.json`.
+A configurable Discord bot that sends messages and pings a specified user both via DM and in a public channel. It supports command cooldowns and external configuration via JSON files.
 
 ---
 
 ## Features
 
 - Sends messages to a specified user via DM and public channel.
-- Configurable via a single JSON file (`config.json`).
-- Command cooldown to prevent spamming.
-- Easily extendable for custom channel messages.
+- Fully configurable via `config.json` and `messages.json`.
+- Supports command cooldowns to prevent spamming.
+- Easily extendable for custom messages and behaviors.
 
 ---
 
 ## Installation
 
-# 1. Clone the Repository
+### 1. Clone the Repository
 
 ```bash
-    git clone https://github.com/nimyhub/Discord_messaging_bot.git
-    cd Discord_messaging_bot
+git clone https://github.com/nimyhub/Discord_messaging_bot.git
+cd Discord_messaging_bot
 ```
 
-# 2. Create a Virtual Environment (optional but recommended)
+### 2. Create a Virtual Environment (optional but recommended)
 
 ```bash
 python -m venv venv
 ```
-    
+
 On Windows:
+
 ```bash
 venv\Scripts\activate
 ```
 
 On Unix/Mac:
+
 ```bash
 source venv/bin/activate
 ```
 
-# 3. Install Dependencies
+### 3. Install Dependencies
 
 ```bash
-pip install -U discord.py python-dotenv
+pip install -r requirements.txt
 ```
+
+---
 
 ## Configuration
 
-Before running the bot, create a `config.json` file in the project directory. This file stores essential configuration details such as bot token, user ID, and channel settings.
+The bot uses two configuration files:
 
-Example `config.json` structure:
+- `config.json`: Contains bot token, user/channel IDs, command prefix, and cooldown settings.
+- `messages.json`: Stores all DM and ping messages sent by the bot.
+
+**Start by copying the example files:**
+
+```bash
+cp config.example.json config.json
+cp messages.example.json messages.json
+```
+
+Then open `config.json` and replace the placeholder values:
 
 ```json
 {
@@ -60,39 +74,73 @@ Example `config.json` structure:
 }
 ```
 
-- `token`: Your bot's authentication token (keep this secret).
-- `user_id`: The Discord user ID of the person to DM/ping.
-- `channel_id`: The ID of the default channel where the bot sends messages.
-- `prefix`: The command prefix (e.g., `"!"`).
-- `cooldown_seconds`: Minimum time between commands from the same user.
+And open `messages.json` to customize the message templates for:
+
+- `dm_messages`: Template messages sent via DM when the `!summon "message"` command is **used with a message**. `{author}` and `{message}` placeholders are replaced dynamically.
+- `dm_no_messages`: Default fallback messages sent via DM when the `!summon` command is **used without a message**. These do not require dynamic substitution but can include `{author}`, can not include `{message}`.
+- `server_ping_messages`: Sequences of messages sent publicly in the channel to get the user's attention.
+
+These messages can include variables like `<@{user_id}>`, `{author}`, or `{message}` and will be formatted automatically.
+
+To customize messages:
+- Edit the message arrays in `messages.json`.
+- Each message or message sequence is indexed and picked randomly at runtime.
+- Make sure message formatting and placeholders match the expected format.
 
 ---
 
-You should also customize the messeges sendt you will find all the messages in the `bot.py`file in the project directory. Find the comment # Send DM and PING # and eveything under you can edit.
+## Example Message Entry
 
-Example, change this:
-
-```python
-if rand == 4:
-                await user.send(f"HÅVARD IS GOING TO FILE FOR DIVORCE IF YOU DONT COME OVER HERE RIGHT NOW!!!")
+```json
+"dm_no_messages": [
+  "GET YOUR ASS ON!",
+  "Petter, the IKEA meatballs are under siege.",
+  "An incoming missile is headed for your Magic collection. Text 'I'm here' to {author}."
+]
 ```
 
-To whatever fits you better:
-```python
-if rand == 4:
-                await user.send(f"Custom message here")
+```json
+"server_ping_messages": {
+  "1": [
+    {"text": "<@{user_id}> WAKE", "delay": 1},
+    {"text": "<@{user_id}> UP", "delay": 1},
+    {"text": "<@{user_id}> NOW", "delay": 1}
+  ]
+}
 ```
 
-Just make sure that
-```python
-rand = random.randint(1, 4)
+---
+
+## Usage Example
+
+![Bot Demo](Media/bot-example.gif)
+
+In a Discord channel:
+
 ```
-and the if-elif statements line up.
+!summon "Get over here"
+```
+
+- Sends a DM to the configured user: `"Get over here - from {author}"`
+- Posts a sequence of ping messages in the configured channel.
+
+---
+
+## Tech Stack
+
+- Python 3.x
+- [discord.py](https://discordpy.readthedocs.io/en/stable/)
+- [python-dotenv](https://pypi.org/project/python-dotenv/)
+- JSON for external message/config management
+
+---
 
 ## Author
-**Nikolai Myrstad** 
-- Information Engineering Student  
-- GitHub: [https://github.com/nimyhub](https://github.com/nimyhub)
+
+**Nikolai Myrstad**  
+Information Engineering Student  
+GitHub: [https://github.com/nimyhub](https://github.com/nimyhub)
+
 ---
 
 ## License
