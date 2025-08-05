@@ -1,4 +1,7 @@
 {
+  "sms_messages": [
+      "test sms"
+  ],
   "dm_no_messages": [
       "Hey, you! Yeah, you. It's time to log in and save the day.",
       "Urgent! The server is about to explode—only you can prevent it!",

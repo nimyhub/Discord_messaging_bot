@@ -3,5 +3,10 @@
   "user_id": 123456789012345678,
   "channel_id": 123456789012345678,
   "prefix": "!",
-  "cooldown_seconds": 30
+  "cooldown_seconds": 30,
+  "enable_sms_call": false,
+  "enable_twilio": false,
+  "twilio_account_sid": "",
+  "twilio_auth_token": "",
+  "twilio_phone_number": ""
 }
