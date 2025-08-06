@@ -9,6 +9,7 @@ A configurable Discord bot that sends messages and pings a specified user both v
 - Sends messages to a specified user via DM and public channel.
 - Fully configurable via `config.json` and `messages.json`.
 - Supports command cooldowns to prevent spamming.
+- Supports sms messages with Twilio
 - Easily extendable for custom messages and behaviors.
 
 ---
@@ -27,37 +28,45 @@ In a Discord channel:
 
 ---
 
-## Installation
+# Installation Guide
 
-### 1. Clone the Repository
+## 1. Clone the Repository
 
-```bash
+```
 git clone https://github.com/nimyhub/Discord_messaging_bot.git
 cd Discord_messaging_bot
 ```
 
-### 2. Create a Virtual Environment (optional but recommended)
+## 2. Setup Virtual Environment and Install Dependencies
 
-```bash
-python -m venv venv
+### Windows
+
+Run the setup batch script:
+
+```
+setup_windows.bat
 ```
 
-On Windows:
+### Unix/Linux/macOS
 
-```bash
-venv\Scripts\activate
+Make the script executable and run it:
+
+```
+chmod +x scripts/setup_linux.sh
+./scripts/setup_linux.sh
 ```
 
-On Unix/Mac:
+## 3. Run the Bot
 
-```bash
-source venv/bin/activate
+### Windows
+```
+run_windows.bat
 ```
 
-### 3. Install Dependencies
-
-```bash
-pip install -r requirements.txt
+### Unix/Linux/macOS
+```
+chmod +x scripts/run_linux.sh
+./scripts/run_linux.sh
 ```
 
 ---
@@ -127,7 +136,7 @@ To customize messages:
 
 ## Tech Stack
 
-- Python 3.x
+- Python 3.11.x
 - [discord.py](https://discordpy.readthedocs.io/en/stable/)
 - [python-dotenv](https://pypi.org/project/python-dotenv/)
 - JSON for external message/config management
