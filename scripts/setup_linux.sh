@@ -2,6 +2,9 @@
 
 echo "Setting up virtual environment..."
 
+# Go one folder up from the script's location
+cd "$(dirname "$0")/.."
+
 # Create virtual environment folder 'venv' if it does not exist
 if [ ! -d "venv" ]; then
     python3 -m venv venv
