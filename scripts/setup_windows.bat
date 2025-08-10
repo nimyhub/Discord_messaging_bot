@@ -1,5 +1,6 @@
 @echo off
 echo Creating virtual environment...
+cd /d "%~dp0.."
 python -m venv venv
 
 echo Activating virtual environment...
